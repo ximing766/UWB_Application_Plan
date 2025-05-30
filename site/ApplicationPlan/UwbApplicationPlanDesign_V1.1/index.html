@@ -1,0 +1,1127 @@
+
+<!doctype html>
+<html lang="zh" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="UWB闸机交易方案设计与应用计划文档">
+      
+      
+        <meta name="author" content="Kewei@QLL">
+      
+      
+        <link rel="canonical" href="https://github.com/ximing766/UWB_Application_Plan.git/ApplicationPlan/UwbApplicationPlanDesign_V1.1/">
+      
+      
+        <link rel="prev" href="../..">
+      
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.14">
+    
+    
+      
+        <title>闸机交易方案设计 - UWB应用计划文档</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.342714a4.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../stylesheets/extra.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+  
+
+
+  
+  
+
+<script id="__analytics">function __md_analytics(){function e(){dataLayer.push(arguments)}window.dataLayer=window.dataLayer||[],e("js",new Date),e("config","G-XXXXXXXXXX"),document.addEventListener("DOMContentLoaded",(function(){document.forms.search&&document.forms.search.query.addEventListener("blur",(function(){this.value&&e("event","search",{search_term:this.value})}));document$.subscribe((function(){var t=document.forms.feedback;if(void 0!==t)for(var a of t.querySelectorAll("[type=submit]"))a.addEventListener("click",(function(a){a.preventDefault();var n=document.location.pathname,d=this.getAttribute("data-md-value");e("event","feedback",{page:n,data:d}),t.firstElementChild.disabled=!0;var r=t.querySelector(".md-feedback__note [data-md-value='"+d+"']");r&&(r.hidden=!1)})),t.hidden=!1})),location$.subscribe((function(t){e("config","G-XXXXXXXXXX",{page_path:t.pathname})}))}));var t=document.createElement("script");t.async=!0,t.src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX",document.getElementById("__analytics").insertAdjacentElement("afterEnd",t)}</script>
+  
+    <script>"undefined"!=typeof __md_analytics&&__md_analytics()</script>
+  
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="deep-purple" data-md-color-accent="purple">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#_1" class="md-skip">
+          跳转至
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+      <div data-md-color-scheme="default" data-md-component="outdated" hidden>
+        
+      </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow md-header--lifted" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="页眉">
+    <a href="../.." title="UWB应用计划文档" class="md-header__button md-logo" aria-label="UWB应用计划文档" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            UWB应用计划文档
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              闸机交易方案设计
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="deep-purple" data-md-color-accent="purple"  aria-label="切换至深色模式"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="切换至深色模式" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="deep-purple" data-md-color-accent="purple"  aria-label="切换至浅色模式"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="切换至浅色模式" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="搜索" placeholder="搜索" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="查找">
+        
+          <a href="javascript:void(0)" class="md-search__icon md-icon" title="分享" aria-label="分享" data-clipboard data-clipboard-text="" data-md-component="search-share" tabindex="-1">
+            
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7s-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9a3 3 0 0 0-3 3 3 3 0 0 0 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.15c-.05.21-.08.43-.08.66 0 1.61 1.31 2.91 2.92 2.91s2.92-1.3 2.92-2.91A2.92 2.92 0 0 0 18 16.08"/></svg>
+          </a>
+        
+        <button type="reset" class="md-search__icon md-icon" title="清空当前内容" aria-label="清空当前内容" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            正在初始化搜索引擎
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/ximing766/UWB_Application_Plan.git" title="前往仓库" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+    
+      
+<nav class="md-tabs" aria-label="标签" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../.." class="md-tabs__link">
+        
+  
+  
+    
+  
+  首页
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="./" class="md-tabs__link">
+          
+  
+  
+    
+  
+  应用计划
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../protocol/data-format.md" class="md-tabs__link">
+          
+  
+  
+    
+  
+  协议文档
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+    
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+  
+
+<nav class="md-nav md-nav--primary md-nav--lifted md-nav--integrated" aria-label="导航栏" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="UWB应用计划文档" class="md-nav__button md-logo" aria-label="UWB应用计划文档" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    UWB应用计划文档
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/ximing766/UWB_Application_Plan.git" title="前往仓库" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    首页
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+      
+        
+      
+    
+    
+      
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    应用计划
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            应用计划
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    闸机交易方案设计
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    闸机交易方案设计
+    
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#0" class="md-nav__link">
+    <span class="md-ellipsis">
+      0 时序图
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#1" class="md-nav__link">
+    <span class="md-ellipsis">
+      1 入站
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1 入站">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#11" class="md-nav__link">
+    <span class="md-ellipsis">
+      1.1 认证方案
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#12" class="md-nav__link">
+    <span class="md-ellipsis">
+      1.2 预读方案
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#13" class="md-nav__link">
+    <span class="md-ellipsis">
+      1.3 交易方案
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../protocol/data-format.md" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    协议文档
+    
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  
+    <a href="https://github.com/ximing766/UWB_Application_Plan.git/edit/main/docs/ApplicationPlan/UwbApplicationPlanDesign_V1.1.md" title="编辑此页" class="md-content__button md-icon">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10 20H6V4h7v5h5v3.1l2-2V8l-6-6H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4zm10.2-7c.1 0 .3.1.4.2l1.3 1.3c.2.2.2.6 0 .8l-1 1-2.1-2.1 1-1c.1-.1.2-.2.4-.2m0 3.9L14.1 23H12v-2.1l6.1-6.1z"/></svg>
+    </a>
+  
+  
+    
+      
+    
+    <a href="https://github.com/ximing766/UWB_Application_Plan.git/raw/main/docs/ApplicationPlan/UwbApplicationPlanDesign_V1.1.md" title="查看本页的源代码" class="md-content__button md-icon">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 18c.56 0 1 .44 1 1s-.44 1-1 1-1-.44-1-1 .44-1 1-1m0-3c-2.73 0-5.06 1.66-6 4 .94 2.34 3.27 4 6 4s5.06-1.66 6-4c-.94-2.34-3.27-4-6-4m0 6.5a2.5 2.5 0 0 1-2.5-2.5 2.5 2.5 0 0 1 2.5-2.5 2.5 2.5 0 0 1 2.5 2.5 2.5 2.5 0 0 1-2.5 2.5M9.27 20H6V4h7v5h5v4.07c.7.08 1.36.25 2 .49V8l-6-6H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h4.5a8.2 8.2 0 0 1-1.23-2"/></svg>
+    </a>
+  
+
+
+<h1 id="_1">闸机交易方案设计<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h1>
+<h2 id="0">0 时序图<a class="headerlink" href="#0" title="Permanent link">&para;</a></h2>
+<h2 id="1">1 入站<a class="headerlink" href="#1" title="Permanent link">&para;</a></h2>
+<h3 id="11">1.1 认证方案<a class="headerlink" href="#11" title="Permanent link">&para;</a></h3>
+<h4 id="111">1.1.1 认证距离设计<a class="headerlink" href="#111" title="Permanent link">&para;</a></h4>
+<p>认证距离与认证成功率正相关，需要对不同距离范围的认证成功率进行压力测试，以确定认证范围。</p>
+<p>前置条件：anchor正向面对手机，距离为同一水平距离</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">距离</th>
+<th style="text-align: left;">轮次</th>
+<th style="text-align: left;">移动状态</th>
+<th style="text-align: left;">nLos</th>
+<th style="text-align: left;">成功率</th>
+<th style="text-align: left;">备注</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">1.5m</td>
+<td style="text-align: left;">25</td>
+<td style="text-align: left;">静态</td>
+<td style="text-align: left;">Los</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+</tr>
+<tr>
+<td style="text-align: left;">2m</td>
+<td style="text-align: left;">50</td>
+<td style="text-align: left;">静态</td>
+<td style="text-align: left;">Los</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+</tr>
+<tr>
+<td style="text-align: left;">2.5m</td>
+<td style="text-align: left;">50</td>
+<td style="text-align: left;">静态</td>
+<td style="text-align: left;">Los</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+</tr>
+<tr>
+<td style="text-align: left;">3m</td>
+<td style="text-align: left;">50</td>
+<td style="text-align: left;">静态</td>
+<td style="text-align: left;">Los</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+</tr>
+<tr>
+<td style="text-align: left;">3m</td>
+<td style="text-align: left;">75</td>
+<td style="text-align: left;">动态</td>
+<td style="text-align: left;">Los</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+</tr>
+<tr>
+<td style="text-align: left;">3m</td>
+<td style="text-align: left;">100</td>
+<td style="text-align: left;">动态</td>
+<td style="text-align: left;">nLos</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+</tr>
+</tbody>
+</table>
+<h4 id="112">1.1.2 认证周期设计<a class="headerlink" href="#112" title="Permanent link">&para;</a></h4>
+<p>用户进入认证区后UWB启动认证流程，认证需在用户进入蓝区前完成。</p>
+<ul>
+<li>成功 &lt; 600ms</li>
+<li>一次失败 &lt; 1800ms</li>
+<li>两次失败 &lt; 3000ms</li>
+</ul>
+<div class="codehilite"><pre><span></span><code><span class="cp">#define  AUTHENCATIONTIMEOUT   100  </span>
+</code></pre></div>
+
+<p>定时器的等待时间为500ms。500ms后没有回复则会触发定时器确认认证失败，开始等待600ms流程，给其他用户使用系统资源的机会。具体实现在1.1.3认证失败设计部分。</p>
+<h4 id="113">1.1.3 认证失败设计<a class="headerlink" href="#113" title="Permanent link">&para;</a></h4>
+<p>认证失败用户有600ms等待时间，等待时间到达后失败用户将重新参与认证流程。600ms的预留可以防止用户异常时独占系统时间，导致其它用户无法完成任何操作。此外，600ms的等待时间理论上刚好足够1个用户完成认证。</p>
+<p>若认证失败次数 &gt; 5，用户将会释放DTPML资源且优先级降低，需等待所有其它用户完成交易后才能重新获得DTPML资源。防止单个用户持续认证失败后，一直占用系统资源。</p>
+<div class="codehilite"><pre><span></span><code><span class="k">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">apdu_quick_timer_callback</span><span class="p">(</span><span class="kt">uint32_t</span><span class="w"> </span><span class="n">timerid</span><span class="p">,</span><span class="w"> </span><span class="n">timer_data_str</span><span class="w"> </span><span class="o">*</span><span class="n">pContext</span><span class="p">)</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="n">LOG_E</span><span class="p">(</span><span class="s">&quot;@@@ %s( ): Auth failed!!! restart Auth process.&quot;</span><span class="p">,</span><span class="n">__FUNCTION__</span><span class="p">);</span>
+<span class="w">    </span><span class="p">(</span><span class="kt">void</span><span class="p">)</span><span class="n">phOsalUwb_Timer_Stop</span><span class="p">(</span><span class="n">timerid</span><span class="p">);</span>
+<span class="w">    </span><span class="n">EndUserDetected</span><span class="p">[</span><span class="n">pContext</span><span class="o">-&gt;</span><span class="n">index</span><span class="p">].</span><span class="n">uiSuccessiveError</span><span class="p">;</span><span class="w">         </span><span class="o">+=</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span>
+<span class="w">    </span><span class="n">EndUserDetected</span><span class="p">[</span><span class="n">pContext</span><span class="o">-&gt;</span><span class="n">index</span><span class="p">].</span><span class="n">AuthenticationState</span><span class="w">  </span><span class="o">=</span><span class="w"> </span><span class="n">notStarted</span><span class="p">;</span>
+<span class="w">    </span><span class="n">EndUserDetected</span><span class="p">[</span><span class="n">pContext</span><span class="o">-&gt;</span><span class="n">index</span><span class="p">].</span><span class="n">SendTimesTamp</span><span class="w">        </span><span class="o">=</span><span class="w"> </span><span class="n">getTimestamp</span><span class="p">();</span>
+<span class="w">    </span><span class="n">gAuthenticateInterrupted</span><span class="w">                              </span><span class="o">=</span><span class="w"> </span><span class="n">TRUE</span><span class="p">;</span>
+<span class="w">    </span><span class="n">vUpdateSystemStateMachine</span><span class="p">(</span><span class="n">SystemFree</span><span class="p">,</span><span class="w"> </span><span class="mh">0x0000</span><span class="p">);</span>
+<span class="w">    </span><span class="n">LOG_I</span><span class="p">(</span><span class="s">&quot;@@@ %s( ): Auth failed times = %d.&quot;</span><span class="p">,</span><span class="n">__FUNCTION__</span><span class="p">,</span><span class="w"> </span><span class="n">EndUserDetected</span><span class="p">[</span><span class="n">pContext</span><span class="o">-&gt;</span><span class="n">index</span><span class="p">].</span><span class="n">uiSuccessiveError</span><span class="p">;);</span>
+<span class="w">    </span><span class="n">printTimestamp</span><span class="p">(</span><span class="s">&quot;@@@ Time of Auth failed callback: &quot;</span><span class="p">,</span><span class="n">EndUserDetected</span><span class="p">[</span><span class="n">pContext</span><span class="o">-&gt;</span><span class="n">index</span><span class="p">].</span><span class="n">uiDeviceMacAddress</span><span class="p">);</span>
+<span class="w">    </span><span class="p">(</span><span class="kt">void</span><span class="p">)</span><span class="n">phOsalUwb_Timer_Delete</span><span class="p">(</span><span class="n">timerid</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre></div>
+
+<div class="codehilite"><pre><span></span><code><span class="k">if</span><span class="p">((</span><span class="n">j</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="mh">0xFF</span><span class="p">)</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="p">(</span><span class="n">EndUserDetected</span><span class="p">[</span><span class="n">j</span><span class="p">].</span><span class="n">AuthFailFlag</span><span class="w"> </span><span class="o">&gt;=</span><span class="w"> </span><span class="mi">1</span><span class="p">))</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="k">if</span><span class="p">(</span><span class="n">EndUserDetected</span><span class="p">[</span><span class="n">j</span><span class="p">].</span><span class="n">AuthFailFlag</span><span class="w"> </span><span class="o">&gt;=</span><span class="w"> </span><span class="mi">5</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="n">CurrentSystemStatus</span><span class="p">.</span><span class="n">SystemStatus</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">SystemFree</span><span class="p">)</span><span class="w"> </span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">        </span><span class="n">vStopAuthentication</span><span class="p">(</span><span class="n">j</span><span class="p">,</span><span class="n">notStarted</span><span class="p">);</span><span class="w"> </span>
+<span class="w">        </span><span class="n">EndUserDetected</span><span class="p">[</span><span class="n">j</span><span class="p">].</span><span class="n">AuthFailFlag</span><span class="w">  </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span>
+<span class="w">        </span><span class="n">EndUserDetected</span><span class="p">[</span><span class="n">j</span><span class="p">].</span><span class="n">priority</span><span class="w">      </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span>
+<span class="w">        </span><span class="n">LOG_I</span><span class="p">(</span><span class="s">&quot;@@@ User %.2x Auth failed times more than 5, set priority = 1... contniue...&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">MacAddress</span><span class="p">);</span>
+<span class="w">        </span><span class="k">continue</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="w">    </span><span class="k">if</span><span class="p">((</span><span class="n">getTimestamp</span><span class="p">()</span><span class="o">-</span><span class="n">EndUserDetected</span><span class="p">[</span><span class="n">j</span><span class="p">].</span><span class="n">SendTimesTamp</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="mf">0.6</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="mi">1000</span><span class="p">)</span><span class="w"> </span><span class="o">||</span><span class="w"> </span><span class="p">(</span><span class="n">CurrentSystemStatus</span><span class="p">.</span><span class="n">SystemStatus</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="n">SystemFree</span><span class="p">))</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">        </span><span class="n">LOG_I</span><span class="p">(</span><span class="s">&quot;@@@ Auth failed and re-authentication not arrived, waitting for 600ms... continue...&quot;</span><span class="p">);</span>
+<span class="w">        </span><span class="k">continue</span><span class="p">;</span><span class="w">                                              </span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+
+<blockquote>
+<p>可能需修改为：多次失败后本地清除用户，并告知手机重启。</p>
+<p><code>c
+uiInformStatusToPhone(j, phone_restart);
+RemoveUserInDTPML(MacAddress); 
+RemoveUser(j);</code></p>
+</blockquote>
+<h3 id="12">1.2 预读方案<a class="headerlink" href="#12" title="Permanent link">&para;</a></h3>
+<h4 id="121">1.2.1 预读距离设计<a class="headerlink" href="#121" title="Permanent link">&para;</a></h4>
+<p>预读是用户在进入蓝区的流程，为减少红区交易时间。若用户跳过蓝区进入红区，将不再依赖预读，从头完成所有流程。</p>
+<div class="codehilite"><pre><span></span><code>uint16_t BlueAreaHeight            = 250;
+</code></pre></div>
+
+<p>设计为全局变量，demo app可调。</p>
+<h4 id="122">1.2.2 预读周期设计<a class="headerlink" href="#122" title="Permanent link">&para;</a></h4>
+<p>认证完成的用户进入蓝区后会进行预读，并将结果存储，用于后续和读卡器交互。</p>
+<ul>
+<li>成功 &lt; 500ms</li>
+<li>一次失败 &lt; 1000ms</li>
+<li>两次失败 &lt; 1500ms</li>
+</ul>
+<div class="codehilite"><pre><span></span><code><span class="cp">#define  TRANSACTIONTIMEOUT    100</span>
+</code></pre></div>
+
+<p>这里预读失败后的定时器等待时间是500ms，不考虑多用户影响的情况下，预读失败1次后完成预读的总时间将&lt;800ms。</p>
+<h4 id="123">1.2.3 预读失败设计<a class="headerlink" href="#123" title="Permanent link">&para;</a></h4>
+<p>预读操作并未做延时设计，默认能够认证成功的用户通常不会出现连续多次的预读失败。</p>
+<p>预读失败的用户将会在定时周期到达时重新开始<strong>（TransactionState = Allewed）</strong></p>
+<div class="codehilite"><pre><span></span><code><span class="k">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">retransfer_timer_callback</span><span class="p">(</span><span class="kt">uint32_t</span><span class="w"> </span><span class="n">timerid</span><span class="p">,</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="o">*</span><span class="n">pContext</span><span class="p">)</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="n">LOG_E</span><span class="p">(</span><span class="s">&quot;@@@ Transfer failed! Restart transfer.&quot;</span><span class="p">);</span>
+
+<span class="w">    </span><span class="p">(</span><span class="kt">void</span><span class="p">)</span><span class="n">phOsalUwb_Timer_Stop</span><span class="p">(</span><span class="n">timerid</span><span class="p">);</span>
+<span class="w">    </span><span class="k">if</span><span class="p">(</span><span class="w"> </span><span class="n">EndUserDetected</span><span class="p">[(</span><span class="o">*</span><span class="p">(</span><span class="kt">uint8_t</span><span class="w"> </span><span class="o">*</span><span class="p">)</span><span class="n">pContext</span><span class="p">)].</span><span class="n">TransactionState</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">SubwayWirteCard_sent</span><span class="p">)</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">        </span><span class="n">vUpdateTransactionStateMachine</span><span class="p">((</span><span class="o">*</span><span class="p">(</span><span class="kt">uint8_t</span><span class="w"> </span><span class="o">*</span><span class="p">)</span><span class="n">pContext</span><span class="p">),</span><span class="n">WriteCard_failed</span><span class="p">);</span><span class="w">  </span><span class="c1">//only once</span>
+<span class="w">    </span><span class="p">}</span><span class="k">else</span><span class="p">{</span>
+<span class="w">        </span><span class="n">vUpdateTransactionStateMachine</span><span class="p">((</span><span class="o">*</span><span class="p">(</span><span class="kt">uint8_t</span><span class="w"> </span><span class="o">*</span><span class="p">)</span><span class="n">pContext</span><span class="p">),</span><span class="n">Allowed</span><span class="p">);</span>
+<span class="w">    </span><span class="p">}</span>
+
+<span class="w">    </span><span class="n">EndUserDetected</span><span class="p">[(</span><span class="o">*</span><span class="p">(</span><span class="kt">uint8_t</span><span class="w"> </span><span class="o">*</span><span class="p">)</span><span class="n">pContext</span><span class="p">)].</span><span class="n">uiSuccessiveError</span><span class="o">++</span><span class="p">;</span>
+
+<span class="w">    </span><span class="n">vUpdateSystemStateMachine</span><span class="p">(</span><span class="n">SystemFree</span><span class="p">,</span><span class="w"> </span><span class="n">EndUserDetected</span><span class="p">[(</span><span class="o">*</span><span class="p">(</span><span class="kt">uint8_t</span><span class="w"> </span><span class="o">*</span><span class="p">)</span><span class="n">pContext</span><span class="p">)].</span><span class="n">uiDeviceMacAddress</span><span class="p">);</span>
+<span class="w">    </span><span class="n">printTimestamp</span><span class="p">(</span><span class="s">&quot;@@@ Time of re-transfer callback: &quot;</span><span class="p">,</span><span class="n">EndUserDetected</span><span class="p">[(</span><span class="o">*</span><span class="p">(</span><span class="kt">uint8_t</span><span class="w"> </span><span class="o">*</span><span class="p">)</span><span class="n">pContext</span><span class="p">)].</span><span class="n">uiDeviceMacAddress</span><span class="p">);</span>
+<span class="w">    </span><span class="p">(</span><span class="kt">void</span><span class="p">)</span><span class="n">phOsalUwb_Timer_Delete</span><span class="p">(</span><span class="n">timerid</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre></div>
+
+<h4 id="124">1.2.4 预读完成处理<a class="headerlink" href="#124" title="Permanent link">&para;</a></h4>
+<p>完成预读的用户不会释放DTPML资源，单通道目前最大支持5个用户同时占用DTPML，其它用户想要完成交易需要等待占据DTPML资源的用户完成交易后释放资源。</p>
+<p><strong>预读过程发送的apdu指令可能会由于城市的不同发生改变，最佳方案是和读卡器进行一次apdu预读指令同步操作，需要得到读卡器支持(待优化)</strong></p>
+<p>预读将会为最终交易时间减少 &lt; 500ms的时间.</p>
+<h5 id="1241-apdu">1.2.4.1 APDU存储块<a class="headerlink" href="#1241-apdu" title="Permanent link">&para;</a></h5>
+<p>由于内存限制原因，无法为所有用户分配独立的空间存储其预读APDU，所有用户将共用内存块，数据结构如下：</p>
+<div class="codehilite"><pre><span></span><code><span class="cp">#define MAX_READ_CARD_NUM   (5)</span>
+<span class="k">typedef</span><span class="w"> </span><span class="k">struct</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="kt">bool</span><span class="w"> </span><span class="n">allocated</span><span class="p">;</span>
+<span class="w">    </span><span class="kt">uint16_t</span><span class="w"> </span><span class="n">block_size</span><span class="p">;</span>
+<span class="w">    </span><span class="kt">uint8_t</span><span class="w"> </span><span class="n">mrm_block</span><span class="p">[</span><span class="mi">3</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="mi">256</span><span class="p">];</span>
+<span class="p">}</span><span class="n">MrmBlock_t</span><span class="p">;</span>
+<span class="n">MrmBlock_t</span><span class="w"> </span><span class="n">__attribute__</span><span class="p">((</span><span class="n">section</span><span class="p">(</span><span class="s">&quot;.bss.$SRAM1&quot;</span><span class="p">)))</span><span class="w"> </span><span class="n">MrmBlockArr</span><span class="p">[</span><span class="n">MAX_READ_CARD_NUM</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{};</span>
+</code></pre></div>
+
+<p>所有用户共用5块APDU内存，当用户收到读卡APDU时查询是否有空闲的APDU内存块，成功则存储自己的读卡APDU，否则，回退至读卡前。</p>
+<div class="codehilite"><pre><span></span><code><span class="kt">uint8_t</span><span class="w"> </span><span class="n">mrmIndex</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">searchUnallocatedMrm</span><span class="p">();</span>
+<span class="k">if</span><span class="p">(</span><span class="n">mrmIndex</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="mi">-1</span><span class="p">){</span>
+<span class="w">    </span><span class="n">LOG_I</span><span class="p">(</span><span class="s">&quot;Found unallocated block at index: %d&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">mrmIndex</span><span class="p">);</span>
+<span class="w">    </span><span class="n">MrmBlockArr</span><span class="p">[</span><span class="n">mrmIndex</span><span class="p">].</span><span class="n">allocated</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">true</span><span class="p">;</span>
+<span class="w">    </span><span class="n">memcpy</span><span class="p">(</span><span class="n">MrmBlockArr</span><span class="p">[</span><span class="n">mrmIndex</span><span class="p">].</span><span class="n">mrm_block</span><span class="p">,</span><span class="n">pRcvDataPkt</span><span class="o">-&gt;</span><span class="n">data</span><span class="p">,</span><span class="n">pRcvDataPkt</span><span class="o">-&gt;</span><span class="n">data_size</span><span class="p">);</span>
+<span class="w">    </span><span class="n">EndUserDetected</span><span class="p">[</span><span class="n">uiUserIndex</span><span class="p">].</span><span class="n">apdu</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">&amp;</span><span class="n">MrmBlockArr</span><span class="p">[</span><span class="n">mrmIndex</span><span class="p">].</span><span class="n">mrm_block</span><span class="p">;</span>
+<span class="w">    </span><span class="n">EndUserDetected</span><span class="p">[</span><span class="n">uiUserIndex</span><span class="p">].</span><span class="n">apdu_len</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">pRcvDataPkt</span><span class="o">-&gt;</span><span class="n">data_size</span><span class="p">;</span>
+<span class="w">    </span><span class="n">EndUserDetected</span><span class="p">[</span><span class="n">uiUserIndex</span><span class="p">].</span><span class="n">block_index</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">mrmIndex</span><span class="p">;</span><span class="w">           </span><span class="c1">//记录用户分到的内存块</span>
+<span class="p">}</span><span class="k">else</span><span class="p">{</span>
+<span class="w">    </span><span class="n">printTimestamp</span><span class="p">(</span><span class="s">&quot;@@@ Time of RAM-Apdu block not enough: &quot;</span><span class="p">,</span><span class="n">EndUserDetected</span><span class="p">[</span><span class="n">uiUserIndex</span><span class="p">].</span><span class="n">uiDeviceMacAddress</span><span class="p">);</span>
+<span class="w">    </span><span class="n">vUpdateSystemStateMachine</span><span class="p">(</span><span class="n">SystemFree</span><span class="p">,</span><span class="w"> </span><span class="n">EndUserDetected</span><span class="p">[</span><span class="n">uiUserIndex</span><span class="p">].</span><span class="n">uiDeviceMacAddress</span><span class="p">);</span>
+<span class="w">    </span><span class="n">vUpdateTransactionStateMachine</span><span class="p">(</span><span class="n">uiUserIndex</span><span class="p">,</span><span class="n">Allowed</span><span class="p">);</span>
+<span class="w">    </span><span class="k">break</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div>
+
+<p>用户读卡时会进行判断，若没有空间的APDU内存块，取消读卡。</p>
+<div class="codehilite"><pre><span></span><code>uint8_t mrmIndex = searchUnallocatedMrm();
+if (mrmIndex == -1) {
+    LOG_W(&quot;No more MRMs available, quit and notify users&quot;);
+    return;
+}
+</code></pre></div>
+
+<h3 id="13">1.3 交易方案<a class="headerlink" href="#13" title="Permanent link">&para;</a></h3>
+<p>用户进入红区后，执行交易流程需要满足以下：</p>
+<ol>
+<li>多用户情形下，所有用户测距包OK（无法判断坏包用户是否处于红区）</li>
+<li>多用户情形下，所有用户未丢包（无法判断丢包用户是否处于红区）</li>
+<li>systemFree且仅有一个用户处于红区</li>
+<li>读卡完成，若未读卡则启动读卡流程</li>
+</ol>
+<h4 id="131">1.3.1 交易距离设计<a class="headerlink" href="#131" title="Permanent link">&para;</a></h4>
+<p>红区被设计为半椭圆。</p>
+<div class="codehilite"><pre><span></span><code><span class="k">if</span><span class="p">(</span><span class="n">is_point_in_ellipse</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">,</span><span class="n">a</span><span class="o">/</span><span class="mi">2</span><span class="p">,</span><span class="n">d</span><span class="o">/</span><span class="mi">2</span><span class="p">))</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="n">NXPLOG_APP_I</span><span class="p">(</span><span class="s">&quot;################################### into red area...##################################################&quot;</span><span class="p">);</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">WRITE_CARD_AREA</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="k">if</span><span class="p">((</span><span class="n">y</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">m</span><span class="p">)</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="p">(</span><span class="n">y</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="mi">0</span><span class="p">))</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="n">NXPLOG_APP_I</span><span class="p">(</span><span class="s">&quot;################################### into blue area...##################################################&quot;</span><span class="p">);</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">READ_CARD_AREA</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div>
+
+<p>若用户存在遮挡，红、蓝区会动态增加nLos_bais大小。</p>
+<div class="codehilite"><pre><span></span><code><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">EndUserDetected</span><span class="p">[</span><span class="n">j</span><span class="p">].</span><span class="n">nLos</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="mi">1</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="n">LOG_I</span><span class="p">(</span><span class="s">&quot;@@@ User nLos is 1 , the red area and blue area Radius will be expanded 25cm&quot;</span><span class="p">);</span>
+<span class="w">    </span><span class="n">d</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">d</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">nLos_bais</span><span class="p">;</span><span class="w">        </span>
+<span class="w">    </span><span class="n">m</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">m</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">nLos_bais</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div>
+
+<p>nLos测量值经过KF_classify预测后得到nLos实际值，当前大致规律为：若之前nLos值为连续的0，期望nLos值被判定为1需要经过6-7次的连续测量值全1。</p>
+<div class="codehilite"><pre><span></span><code><span class="kt">uint8_t</span><span class="w"> </span><span class="nf">KF_classify</span><span class="p">(</span><span class="n">KalmanFilter</span><span class="w"> </span><span class="o">*</span><span class="n">kf</span><span class="p">,</span><span class="kt">uint8_t</span><span class="w"> </span><span class="n">measurement</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">       </span><span class="k">const</span><span class="w">  </span><span class="kt">float</span><span class="w"> </span><span class="n">Q</span><span class="w">     </span><span class="o">=</span><span class="w"> </span><span class="mf">0.003f</span><span class="p">;</span><span class="w">       </span><span class="c1">// Process noise covariance</span>
+<span class="w">       </span><span class="k">const</span><span class="w">  </span><span class="kt">float</span><span class="w"> </span><span class="n">R</span><span class="w">     </span><span class="o">=</span><span class="w"> </span><span class="mf">0.35f</span><span class="p">;</span><span class="w">        </span><span class="c1">// Measurement noise covariance</span>
+<span class="w">       </span><span class="k">const</span><span class="w">  </span><span class="kt">float</span><span class="w"> </span><span class="n">F</span><span class="w">     </span><span class="o">=</span><span class="w"> </span><span class="mf">1.0f</span><span class="p">;</span><span class="w">         </span><span class="c1">// State transition matrix</span>
+<span class="w">       </span><span class="k">const</span><span class="w">  </span><span class="kt">float</span><span class="w"> </span><span class="n">H</span><span class="w">     </span><span class="o">=</span><span class="w"> </span><span class="mf">1.0f</span><span class="p">;</span><span class="w">         </span><span class="c1">// Observation matrix </span>
+
+<span class="w">       </span><span class="n">kf</span><span class="o">-&gt;</span><span class="n">x</span><span class="w">     </span><span class="o">=</span><span class="w"> </span><span class="n">F</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">kf</span><span class="o">-&gt;</span><span class="n">x</span><span class="p">;</span>
+<span class="w">       </span><span class="n">kf</span><span class="o">-&gt;</span><span class="n">E_est</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">F</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">kf</span><span class="o">-&gt;</span><span class="n">E_est</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">F</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">Q</span><span class="p">;</span>
+<span class="w">       </span><span class="kt">float</span><span class="w"> </span><span class="n">y</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">measurement</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">H</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">kf</span><span class="o">-&gt;</span><span class="n">x</span><span class="p">;</span>
+<span class="w">       </span><span class="kt">float</span><span class="w"> </span><span class="n">S</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">H</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">kf</span><span class="o">-&gt;</span><span class="n">E_est</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">H</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">R</span><span class="p">;</span>
+<span class="w">       </span><span class="kt">float</span><span class="w"> </span><span class="n">K</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">kf</span><span class="o">-&gt;</span><span class="n">E_est</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">H</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="n">S</span><span class="p">;</span><span class="w">             </span><span class="c1">// Calculate Kalman gain</span>
+<span class="w">       </span><span class="n">kf</span><span class="o">-&gt;</span><span class="n">x</span><span class="w">     </span><span class="o">=</span><span class="w"> </span><span class="n">kf</span><span class="o">-&gt;</span><span class="n">x</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">K</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">y</span><span class="p">;</span><span class="w">                </span><span class="c1">// 新预测值 = 上一轮预测值（先验） + 权重 × 新息</span>
+<span class="w">       </span><span class="n">kf</span><span class="o">-&gt;</span><span class="n">E_est</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="mi">1</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">K</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">H</span><span class="p">)</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">kf</span><span class="o">-&gt;</span><span class="n">E_est</span><span class="p">;</span><span class="w">      </span><span class="c1">// Update error covariance</span>
+<span class="w">       </span><span class="kt">uint8_t</span><span class="w"> </span><span class="n">classification</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">kf</span><span class="o">-&gt;</span><span class="n">x</span><span class="w"> </span><span class="o">&gt;=</span><span class="w"> </span><span class="mf">0.5f</span><span class="w"> </span><span class="o">?</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+<span class="w">       </span><span class="k">return</span><span class="w"> </span><span class="n">classification</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div>
+
+<h4 id="132">1.3.2 交易周期设计<a class="headerlink" href="#132" title="Permanent link">&para;</a></h4>
+<p>用户进入写卡区域后进行写卡：</p>
+<ul>
+<li>1个测距轮成功：&lt; 300ms</li>
+<li>2个测距轮成功：&lt; 600ms</li>
+<li>一次失败：&lt;  1 - 2s</li>
+<li>二次失败： &lt;  ???? ms</li>
+</ul>
+<h4 id="133">1.3.3 交易失败设计<a class="headerlink" href="#133" title="Permanent link">&para;</a></h4>
+<p>针对不同情形下的交易失败进行处理：</p>
+<ol>
+<li>向手机读卡失败：释放系统资源，400ms后可再次发起读卡</li>
+<li>向手机写卡失败：回退到读卡完成状态，400ms后可再次发起和Reader交互</li>
+<li>Reader无返回：回退到读卡完成状态，400ms后可再次发起和Reader交互</li>
+<li>若1|2执行了5轮仍然失败，清除用户并通知手机重启</li>
+</ol>
+<div class="codehilite"><pre><span></span><code><span class="k">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">retransfer_timer_callback</span><span class="p">(</span><span class="kt">uint32_t</span><span class="w"> </span><span class="n">timerid</span><span class="p">,</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="o">*</span><span class="n">pContext</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="n">LOG_E</span><span class="p">(</span><span class="s">&quot;@@@ Transfer failed! Restart transfer.&quot;</span><span class="p">);</span>
+<span class="w">    </span><span class="n">printTimestamp</span><span class="p">(</span><span class="s">&quot;@@@ Time of re-transfer callback: &quot;</span><span class="p">,</span><span class="w"> </span><span class="n">EndUserDetected</span><span class="p">[(</span><span class="o">*</span><span class="p">(</span><span class="kt">uint8_t</span><span class="w"> </span><span class="o">*</span><span class="p">)</span><span class="n">pContext</span><span class="p">)].</span><span class="n">uiDeviceMacAddress</span><span class="p">);</span>
+<span class="w">    </span><span class="p">(</span><span class="kt">void</span><span class="p">)</span><span class="n">phOsalUwb_Timer_Stop</span><span class="p">(</span><span class="n">timerid</span><span class="p">);</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">EndUserDetected</span><span class="p">[(</span><span class="o">*</span><span class="p">(</span><span class="kt">uint8_t</span><span class="w"> </span><span class="o">*</span><span class="p">)</span><span class="n">pContext</span><span class="p">)].</span><span class="n">TransactionState</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">SubwayWirteCard_sent</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="n">vUpdateTransactionStateMachine</span><span class="p">((</span><span class="o">*</span><span class="p">(</span><span class="kt">uint8_t</span><span class="w"> </span><span class="o">*</span><span class="p">)</span><span class="n">pContext</span><span class="p">),</span><span class="w"> </span><span class="n">ReadCard_compelete</span><span class="p">);</span><span class="w">  </span>
+<span class="w">    </span><span class="p">}</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="n">vUpdateTransactionStateMachine</span><span class="p">((</span><span class="o">*</span><span class="p">(</span><span class="kt">uint8_t</span><span class="w"> </span><span class="o">*</span><span class="p">)</span><span class="n">pContext</span><span class="p">),</span><span class="w"> </span><span class="n">Allowed</span><span class="p">);</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="w">    </span><span class="n">EndUserDetected</span><span class="p">[(</span><span class="o">*</span><span class="p">(</span><span class="kt">uint8_t</span><span class="w"> </span><span class="o">*</span><span class="p">)</span><span class="n">pContext</span><span class="p">)].</span><span class="n">uiSuccessiveError</span><span class="o">++</span><span class="p">;</span>
+<span class="w">    </span><span class="n">vUpdateSystemStateMachine</span><span class="p">(</span><span class="n">SystemFree</span><span class="p">,</span><span class="w"> </span><span class="n">EndUserDetected</span><span class="p">[(</span><span class="o">*</span><span class="p">(</span><span class="kt">uint8_t</span><span class="w"> </span><span class="o">*</span><span class="p">)</span><span class="n">pContext</span><span class="p">)].</span><span class="n">uiDeviceMacAddress</span><span class="p">);</span>
+<span class="w">    </span><span class="p">(</span><span class="kt">void</span><span class="p">)</span><span class="n">phOsalUwb_Timer_Delete</span><span class="p">(</span><span class="n">timerid</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre></div>
+
+<blockquote>
+<p>注：失败+重试时间需小于信号量等待时间</p>
+</blockquote>
+<h4 id="134">1.3.4 交易完成设计<a class="headerlink" href="#134" title="Permanent link">&para;</a></h4>
+<p>用户接收来自Reader的HALT信号后开始进行交易完成处理流程：</p>
+<ol>
+<li>通知Phone交易完成</li>
+<li>更新交易完成表，防止连续对同一个用户进行交易</li>
+<li>删除本地存储的用户状态</li>
+<li>释放系统资源</li>
+</ol>
+<div class="codehilite"><pre><span></span><code><span class="kt">void</span><span class="w"> </span><span class="nf">transactionDoneRoutine</span><span class="p">(</span><span class="kt">uint16_t</span><span class="w"> </span><span class="n">uiAddressSource</span><span class="p">,</span><span class="w"> </span><span class="kt">uint8_t</span><span class="w"> </span><span class="n">uiUserIndex</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="n">vStopTransaction</span><span class="p">(</span><span class="n">uiUserIndex</span><span class="p">,</span><span class="w"> </span><span class="n">EndUserDetected</span><span class="p">[</span><span class="n">uiUserIndex</span><span class="p">].</span><span class="n">TransactionState</span><span class="w"> </span><span class="p">);</span>
+<span class="w">    </span><span class="n">printTimestamp</span><span class="p">(</span><span class="s">&quot;@@@ Time of Write Card End : &quot;</span><span class="p">,</span><span class="n">sztapdudata</span><span class="p">.</span><span class="n">MACADDRESS</span><span class="p">);</span>
+<span class="w">    </span><span class="kt">char</span><span class="w"> </span><span class="n">doneMacKey</span><span class="p">[</span><span class="mi">5</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="s">&quot;init&quot;</span><span class="p">};</span>
+<span class="w">    </span><span class="n">HexToAscii</span><span class="p">((</span><span class="kt">uint8_t</span><span class="w"> </span><span class="o">*</span><span class="p">)(</span><span class="o">&amp;</span><span class="n">uiAddressSource</span><span class="p">),</span><span class="w"> </span><span class="n">doneMacKey</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="p">);</span><span class="w"> </span><span class="c1">// 2 bytes</span>
+<span class="w">    </span><span class="n">updateTransactionAddressMap</span><span class="p">(</span><span class="n">uiAddressSource</span><span class="p">,</span><span class="w"> </span><span class="n">doneMacKey</span><span class="p">);</span>
+<span class="w">    </span><span class="n">RemoveUser</span><span class="p">(</span><span class="n">uiUserIndex</span><span class="p">);</span>
+<span class="w">    </span><span class="n">vUpdateSystemStateMachine</span><span class="p">(</span><span class="n">SystemFree</span><span class="p">,</span><span class="w"> </span><span class="mh">0x0000</span><span class="p">);</span><span class="w">    </span>
+<span class="p">}</span>
+</code></pre></div>
+
+<h6 id="1341">1.3.4.1 交易完成地址表策略<a class="headerlink" href="#1341" title="Permanent link">&para;</a></h6>
+<p>用户完成交易后，进行下一次交易限制条件：</p>
+<ol>
+<li>用户交易完成并断开连接30s后，允许再次交易</li>
+<li>用户未断开连接30s，强行等待64s后，允许再次交易</li>
+<li>用户未断开连接30s，未强行等待64s，期间有 &gt; 10个用户完成交易，运行再次交易，循环覆盖</li>
+</ol>
+<div class="codehilite"><pre><span></span><code>uint8_t transacIndex         = searchDoneUserIndex(MacAddress);
+if (transacIndex != NUMBER_TRANCTION_HISTORY_DEVICES) {
+    LOG_I(&quot;device detected with MAC Address %x already transaction done, ignored &quot;,MacAddress);
+    UserDoneTransaction[transacIndex].StayCurCount = UserDoneTransaction[transacIndex].StayCurCount + 1;
+    UserDoneTransaction[transacIndex].StayPreCount = 120;
+}
+</code></pre></div>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+  <form class="md-feedback" name="feedback" hidden>
+    <fieldset>
+      <legend class="md-feedback__title">
+        这个页面有帮助吗？
+      </legend>
+      <div class="md-feedback__inner">
+        <div class="md-feedback__list">
+          
+            <button class="md-feedback__icon md-icon" type="submit" title="很有帮助" data-md-value="1">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 12a8 8 0 0 0-8-8 8 8 0 0 0-8 8 8 8 0 0 0 8 8 8 8 0 0 0 8-8m2 0a10 10 0 0 1-10 10A10 10 0 0 1 2 12 10 10 0 0 1 12 2a10 10 0 0 1 10 10M10 9.5c0 .8-.7 1.5-1.5 1.5S7 10.3 7 9.5 7.7 8 8.5 8s1.5.7 1.5 1.5m7 0c0 .8-.7 1.5-1.5 1.5S14 10.3 14 9.5 14.7 8 15.5 8s1.5.7 1.5 1.5m-5 7.73c-1.75 0-3.29-.73-4.19-1.81L9.23 14c.45.72 1.52 1.23 2.77 1.23s2.32-.51 2.77-1.23l1.42 1.42c-.9 1.08-2.44 1.81-4.19 1.81"/></svg>
+            </button>
+          
+            <button class="md-feedback__icon md-icon" type="submit" title="需要改进" data-md-value="0">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 12a8 8 0 0 0-8-8 8 8 0 0 0-8 8 8 8 0 0 0 8 8 8 8 0 0 0 8-8m2 0a10 10 0 0 1-10 10A10 10 0 0 1 2 12 10 10 0 0 1 12 2a10 10 0 0 1 10 10m-6.5-4c.8 0 1.5.7 1.5 1.5s-.7 1.5-1.5 1.5-1.5-.7-1.5-1.5.7-1.5 1.5-1.5M10 9.5c0 .8-.7 1.5-1.5 1.5S7 10.3 7 9.5 7.7 8 8.5 8s1.5.7 1.5 1.5m2 4.5c1.75 0 3.29.72 4.19 1.81l-1.42 1.42C14.32 16.5 13.25 16 12 16s-2.32.5-2.77 1.23l-1.42-1.42C8.71 14.72 10.25 14 12 14"/></svg>
+            </button>
+          
+        </div>
+        <div class="md-feedback__note">
+          
+            <div data-md-value="1" hidden>
+              
+              
+                
+              
+              
+              
+                
+                
+              
+              感谢您的反馈！
+
+            </div>
+          
+            <div data-md-value="0" hidden>
+              
+              
+                
+              
+              
+              
+                
+                
+              
+              感谢您的反馈！请通过GitHub Issues告诉我们如何改进。
+
+            </div>
+          
+        </div>
+      </div>
+    </fieldset>
+  </form>
+
+
+                
+              </article>
+            </div>
+          
+          
+  <script>var tabs=__md_get("__tabs");if(Array.isArray(tabs))e:for(var set of document.querySelectorAll(".tabbed-set")){var labels=set.querySelector(".tabbed-labels");for(var tab of tabs)for(var label of labels.getElementsByTagName("label"))if(label.innerText.trim()===tab){var input=document.getElementById(label.htmlFor);input.checked=!0;continue e}}</script>
+
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  回到页面顶部
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+      
+      <nav class="md-footer__inner md-grid" aria-label="页脚" >
+        
+          
+          <a href="../.." class="md-footer__link md-footer__link--prev" aria-label="上一页: 首页">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                上一页
+              </span>
+              <div class="md-ellipsis">
+                首页
+              </div>
+            </div>
+          </a>
+        
+        
+      </nav>
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      Copyright © 2024 Kewei@QLL. All rights reserved.
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+        <div class="md-social">
+  
+    
+    
+    
+    
+    <a href="https://github.com/ximing766/UwbKnowledgePoints.git" target="_blank" rel="noopener" title="GitHub" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8M97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+    </a>
+  
+    
+    
+    
+    
+    <a href="mailto:ximing766@gmail.com" target="_blank" rel="noopener" title="邮箱联系" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M498.1 5.6c10.1 7 15.4 19.1 13.5 31.2l-64 416c-1.5 9.7-7.4 18.2-16 23s-18.9 5.4-28 1.6L284 427.7l-68.5 74.1c-8.9 9.7-22.9 12.9-35.2 8.1S160 493.2 160 480v-83.6c0-4 1.5-7.8 4.2-10.8l167.6-182.8c5.8-6.3 5.6-16-.4-22s-15.7-6.4-22-.7L106 360.8l-88.3-44.2C7.1 311.3.3 300.7 0 288.9s5.9-22.8 16.1-28.7l448-256c10.7-6.1 23.9-5.5 34 1.4"/></svg>
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+      <div class="md-progress" data-md-component="progress" role="progressbar"></div>
+    
+    
+    
+      
+      <script id="__config" type="application/json">{"base": "../..", "features": ["announce.dismiss", "content.action.edit", "content.action.view", "content.code.annotate", "content.code.copy", "content.code.select", "content.tabs.link", "content.tooltips", "header.autohide", "navigation.footer", "navigation.indexes", "navigation.instant", "navigation.instant.prefetch", "navigation.instant.progress", "navigation.prune", "navigation.sections", "navigation.tabs", "navigation.tabs.sticky", "navigation.top", "navigation.tracking", "search.highlight", "search.share", "search.suggest", "toc.follow", "toc.integrate"], "search": "../../assets/javascripts/workers/search.d50fe291.min.js", "tags": null, "translations": {"clipboard.copied": "\u5df2\u590d\u5236", "clipboard.copy": "\u590d\u5236", "search.result.more.one": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.other": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 # \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.term.missing": "\u7f3a\u5c11", "select.version": "\u9009\u62e9\u5f53\u524d\u7248\u672c"}, "version": {"provider": "mike"}}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.13a4f30d.min.js"></script>
+      
+    
+  </body>
+</html>

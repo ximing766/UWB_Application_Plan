@@ -1,0 +1,112 @@
+site_name: UWB应用计划文档
+site_description: "UWB闸机交易方案设计与应用计划文档"
+site_author: "Kewei@QLL"
+copyright: "Copyright © 2024 Kewei@QLL. All rights reserved."
+site_url: "https://github.com/ximing766/UWB_Application_Plan.git"
+repo_url: https://github.com/ximing766/UWB_Application_Plan.git
+repo_name: GitHub
+edit_uri: edit/main/docs/
+
+nav:
+  - 首页: index.md
+  - 应用计划:
+    - 闸机交易方案设计: ApplicationPlan/UwbApplicationPlanDesign_V1.1.md
+  - 协议文档:
+    - 数据格式规范: protocol/data-format.md
+
+theme:
+  name: material
+  language: zh # 已配置为中文
+  features:
+    - announce.dismiss
+    - content.action.edit
+    - content.action.view
+    - content.code.annotate
+    - content.code.copy
+    - content.code.select
+    - content.tabs.link
+    - content.tooltips
+    - header.autohide
+    - navigation.footer
+    - navigation.indexes
+    - navigation.instant
+    - navigation.instant.prefetch
+    - navigation.instant.progress
+    - navigation.prune
+    - navigation.sections
+    - navigation.tabs
+    - navigation.tabs.sticky
+    - navigation.top
+    - navigation.tracking
+    - search.highlight
+    - search.share
+    - search.suggest
+    - toc.follow
+    - toc.integrate
+  palette:
+    - media: "(prefers-color-scheme: light)"
+      scheme: default
+      primary: deep purple
+      accent: purple
+      toggle:
+        icon: material/brightness-7
+        name: 切换至深色模式
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
+      primary: deep purple
+      accent: purple
+      toggle:
+        icon: material/brightness-4
+        name: 切换至浅色模式
+  font:
+    text: Roboto
+    code: Roboto Mono
+
+markdown_extensions:
+  - toc:
+      permalink: true
+      toc_depth: 3
+  - admonition
+  - codehilite:
+      guess_lang: false
+  - pymdownx.tabbed:
+      alternate_style: true
+  - pymdownx.mark
+  - pymdownx.snippets
+  - pymdownx.inlinehilite
+  - pymdownx.details
+  - pymdownx.highlight:
+      anchor_linenums: true
+      line_spans: __span
+      pygments_lang_class: true
+  - pymdownx.smartsymbols
+
+extra:
+  version:
+    provider: mike
+  social:
+    - icon: fontawesome/brands/github
+      link: https://github.com/ximing766/UwbKnowledgePoints.git
+      name: GitHub
+    - icon: fontawesome/solid/paper-plane
+      link: mailto:ximing766@gmail.com
+      name: 邮箱联系
+  analytics:
+    provider: google
+    property: G-XXXXXXXXXX
+    feedback:
+      title: 这个页面有帮助吗？
+      ratings:
+        - icon: material/emoticon-happy-outline
+          name: 很有帮助
+          data: 1
+          note: >
+            感谢您的反馈！
+        - icon: material/emoticon-sad-outline
+          name: 需要改进
+          data: 0
+          note: >
+            感谢您的反馈！请通过GitHub Issues告诉我们如何改进。
+
+extra_css:
+  - stylesheets/extra.css

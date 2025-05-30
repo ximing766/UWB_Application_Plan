@@ -1,0 +1,20 @@
+# 这个文件定义了代码库中不同部分的负责人
+# 当有人提交PR时，会自动请求这些人进行代码审查
+# 更多信息: https://docs.github.com/en/repositories/managing-your-repositorys-settings-and-features/customizing-your-repository/about-code-owners
+
+# 默认所有者，如果没有其他规则匹配，这些人将被分配为审查者
+* @ximing766
+
+# 文档相关文件
+/docs/ @ximing766
+*.md @ximing766
+
+# Python代码
+*.py @ximing766
+
+# 配置文件
+mkdocs.yml @ximing766
+pyproject.toml @ximing766
+
+# GitHub Actions工作流
+/.github/workflows/ @ximing766

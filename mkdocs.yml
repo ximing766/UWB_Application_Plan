@@ -11,8 +11,6 @@ nav:
   - 首页: index.md
   - 应用计划:
     - 闸机交易方案设计: ApplicationPlan/UwbApplicationPlanDesign_V1.1.md
-  - 协议文档:
-    - 数据格式规范: protocol/data-format.md
 
 theme:
   name: material

@@ -16,9 +16,6 @@
 ### 🏗️ 应用计划
 - [闸机交易方案设计](ApplicationPlan/UwbApplicationPlanDesign_V1.1.md) - 详细的方案设计文档
 
-### 📋 协议文档
-- [数据格式规范](protocol/data-format.md) - 数据包格式和编码规范
-
 
 ## 🔧 快速开始
 

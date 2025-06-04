@@ -277,28 +277,6 @@
   
 
       
-        
-  
-  
-  
-  
-    
-    
-      <li class="md-tabs__item">
-        <a href="protocol/data-format.md" class="md-tabs__link">
-          
-  
-  
-    
-  
-  协议文档
-
-        </a>
-      </li>
-    
-  
-
-      
     </ul>
   </div>
 </nav>
@@ -436,64 +414,13 @@
   
 </li>
         
-          <li class="md-nav__item">
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#_4" class="md-nav__link">
-    <span class="md-ellipsis">
-      📋 协议文档
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_5" class="md-nav__link">
-    <span class="md-ellipsis">
-      🔧 快速开始
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="🔧 快速开始">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#_6" class="md-nav__link">
-    <span class="md-ellipsis">
-      环境要求
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#_7" class="md-nav__link">
-    <span class="md-ellipsis">
-      本地运行
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#_8" class="md-nav__link">
-    <span class="md-ellipsis">
-      构建文档
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_9" class="md-nav__link">
     <span class="md-ellipsis">
       🏗️ 项目结构
     </span>
@@ -502,27 +429,9 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#_10" class="md-nav__link">
-    <span class="md-ellipsis">
-      🤝 贡献指南
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_11" class="md-nav__link">
+  <a href="#_5" class="md-nav__link">
     <span class="md-ellipsis">
       📄 许可证
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_12" class="md-nav__link">
-    <span class="md-ellipsis">
-      📞 联系我们
     </span>
   </a>
   
@@ -588,58 +497,6 @@
   
 
     
-      
-      
-  
-  
-  
-  
-    
-    
-      
-        
-      
-    
-    
-    
-      
-      
-        
-      
-    
-    
-      
-        
-        
-      
-    
-    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
-      
-        
-  
-  
-  
-    <a href="protocol/data-format.md" class="md-nav__link">
-      
-  
-  
-  <span class="md-ellipsis">
-    协议文档
-    
-  </span>
-  
-
-      
-        <span class="md-nav__icon md-icon"></span>
-      
-    </a>
-  
-
-      
-    </li>
-  
-
-    
   </ul>
 </nav>
                   </div>
@@ -688,41 +545,7 @@
 <ul>
 <li><a href="ApplicationPlan/UwbApplicationPlanDesign_V1.1/">闸机交易方案设计</a> - 详细的方案设计文档</li>
 </ul>
-<h3 id="_4">📋 协议文档<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h3>
-<ul>
-<li><a href="protocol/data-format.md">数据格式规范</a> - 数据包格式和编码规范</li>
-</ul>
-<h2 id="_5">🔧 快速开始<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h2>
-<h3 id="_6">环境要求<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h3>
-<ul>
-<li>Python 3.11+</li>
-<li>MkDocs 1.6.1+</li>
-<li>MkDocs Material主题</li>
-</ul>
-<h3 id="_7">本地运行<a class="headerlink" href="#_7" title="Permanent link">&para;</a></h3>
-<div class="codehilite"><pre><span></span><code><span class="c1"># 克隆项目</span>
-git<span class="w"> </span>clone<span class="w"> </span>https://github.com/ximing766/UWB_Application_Plan.git
-<span class="nb">cd</span><span class="w"> </span>UWB_Application_Plan
-
-<span class="c1"># 安装依赖</span>
-pip<span class="w"> </span>install<span class="w"> </span>-r<span class="w"> </span>requirements.txt
-
-<span class="c1"># 启动开发服务器</span>
-python<span class="w"> </span>main.py<span class="w"> </span>serve
-
-<span class="c1"># 或者直接使用mkdocs</span>
-mkdocs<span class="w"> </span>serve
-</code></pre></div>
-
-<h3 id="_8">构建文档<a class="headerlink" href="#_8" title="Permanent link">&para;</a></h3>
-<div class="codehilite"><pre><span></span><code><span class="c1"># 构建静态文档</span>
-python<span class="w"> </span>main.py<span class="w"> </span>build
-
-<span class="c1"># 或者使用mkdocs</span>
-mkdocs<span class="w"> </span>build
-</code></pre></div>
-
-<h2 id="_9">🏗️ 项目结构<a class="headerlink" href="#_9" title="Permanent link">&para;</a></h2>
+<h2 id="_4">🏗️ 项目结构<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h2>
 <div class="codehilite"><pre><span></span><code>UWB_Application_Plan/
 ├── docs/                    # 文档源文件
 │   ├── ApplicationPlan/     # 应用计划文档
@@ -737,22 +560,8 @@ mkdocs<span class="w"> </span>build
 └── README.md              # 项目说明
 </code></pre></div>
 
-<h2 id="_10">🤝 贡献指南<a class="headerlink" href="#_10" title="Permanent link">&para;</a></h2>
-<p>我们欢迎任何形式的贡献！请遵循以下步骤：</p>
-<ol>
-<li>Fork 本项目</li>
-<li>创建特性分支 (<code>git checkout -b feature/AmazingFeature</code>)</li>
-<li>提交更改 (<code>git commit -m 'Add some AmazingFeature'</code>)</li>
-<li>推送到分支 (<code>git push origin feature/AmazingFeature</code>)</li>
-<li>开启 Pull Request</li>
-</ol>
-<h2 id="_11">📄 许可证<a class="headerlink" href="#_11" title="Permanent link">&para;</a></h2>
+<h2 id="_5">📄 许可证<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h2>
 <p>Copyright © 2024 Kewei@QLL. All rights reserved.</p>
-<h2 id="_12">📞 联系我们<a class="headerlink" href="#_12" title="Permanent link">&para;</a></h2>
-<ul>
-<li>📧 Email: ximing766@gmail.com</li>
-<li>🐙 GitHub: <a href="https://github.com/ximing766/UWB_Application_Plan.git">UWB_Application_Plan</a></li>
-</ul>
 <hr />
 <p><em>最后更新: 2024年</em></p>
 
